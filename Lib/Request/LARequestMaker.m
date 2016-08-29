@@ -16,13 +16,14 @@ static NSArray *LAMethodMap = nil;
 
 @property (nonatomic, strong) LADictionary *head;
 @property (nonatomic, strong) LADictionary *param;
-@property (nonatomic, strong) LACallback *willInvoke;
-@property (nonatomic, strong) LACallback *afterInvoke;
+@property (nonatomic, strong) LACallback *willStart;
+@property (nonatomic, strong) LACallback *didFinish;
 
 @property (nonatomic, strong) NSString *v_method;
 @property (nonatomic, strong) NSString *v_host;
 @property (nonatomic, strong) NSString *v_version;
 @property (nonatomic, strong) NSString *v_path;
+@property (nonatomic, strong) NSData *v_customBody;
 
 @property (nonatomic, assign) LAPostStyle v_postStyle;
 @property (nonatomic, assign) LAResponseStyle v_responseStyle;
@@ -69,6 +70,13 @@ static NSArray *LAMethodMap = nil;
     };
 }
 
+- (LARequestMaker *(^)(NSData *))body {
+    return ^id(NSData * value) {
+        self.v_customBody = value;
+        return self;
+    };
+}
+
 - (LARequestMaker *(^)(LAResponseStyle))response {
     return ^id(LAResponseStyle value) {
         self.v_responseStyle = value;
@@ -105,30 +113,35 @@ static NSArray *LAMethodMap = nil;
 }
 
 - (LARequest *)make {
-    NSString *url = nil;
+    NSMutableString *url = [NSMutableString stringWithString:@""];
+    if (self.v_host) {
+        [url appendString:self.v_host];
+    }
     if (self.v_version) {
-        url = [NSString stringWithFormat:@"%@/%@%@",
-               self.v_host,
-               self.v_version,
-               self.v_path];
-    } else {
-        url = [NSString stringWithFormat:@"%@%@",
-               self.v_host,
-               self.v_path];
+        [url appendFormat:@"/%@", self.v_version];
+    }
+    if (self.v_path) {
+        [url appendString:self.v_path];
     }
     
     NSMutableURLRequest *request = [LACore makeRequest:url method:self.v_method
                                                   post:self.v_postStyle
                                                 params:self.param.property];
     NSDictionary *headers = self.head.property;
-    [headers enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+    [headers enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         [request addValue:obj forHTTPHeaderField:key];
     }];
     
+    if ((self.v_postStyle == LAPostStyleCustom) && (self.v_customBody)) {
+        request.HTTPBody = self.v_customBody;
+    }
+    
     LARequest *result = [LARequest new];
     result.request = request;
+    result.param = self.param.property;
     result.synchronous = self.v_sync;
     result.responseStyle = self.v_responseStyle;
+    result.postStyle = self.v_postStyle;
     return result;
 }
 
@@ -139,17 +152,19 @@ static NSArray *LAMethodMap = nil;
     self.v_host = value.v_host;
     self.v_version = value.v_version;
     self.v_path = value.v_path;
+    self.v_customBody = value.v_customBody;
     self.v_responseStyle = value.v_responseStyle;
+    self.v_postStyle = value.v_postStyle;
     self.v_sync = value.v_sync;
     self.head.set(value.head);
     self.param.set(value.param);
-    self.willInvoke.set(value.willInvoke);
-    self.afterInvoke.set(value.afterInvoke);
+    self.willStart.set(value.willStart);
+    self.didFinish.set(value.didFinish);
 }
 
 #pragma mark - life cycle
 
-+ (void)load {
++ (void)initialize {
     LAMethodMap = @[@"GET", @"POST", @"PUT", @"DELETE"];
 }
 
@@ -157,8 +172,8 @@ static NSArray *LAMethodMap = nil;
     if (self = [super init]) {
         self.head = [LADictionary new];
         self.param = [LADictionary new];
-        self.willInvoke = [LACallback new];
-        self.afterInvoke = [LACallback new];
+        self.willStart = [LACallback new];
+        self.didFinish = [LACallback new];
         self.v_postStyle = LAPostStyleJSON;
         self.v_responseStyle = LAResponseStyleJSON;
         self.v_sync = NO;
@@ -193,22 +208,22 @@ static NSArray *LAMethodMap = nil;
 
     NSString *temp = self.head.description;
     if (temp) {
-        [str appendFormat:@"[Additional Header]%@\n", temp];
+        [str appendFormat:@"[Header]%@\n", temp];
     }
 
     temp = self.param.description;
     if (temp) {
-        [str appendFormat:@"[Additional Param]%@\n", temp];
+        [str appendFormat:@"[Param]%@\n", temp];
     }
     
-    temp = self.willInvoke.description;
+    temp = self.willStart.description;
     if (temp) {
-        [str appendFormat:@"[Before Request]%@\n", temp];
+        [str appendFormat:@"[will Start]%@\n", temp];
     }
     
-    temp = self.afterInvoke.description;
+    temp = self.didFinish.description;
     if (temp) {
-        [str appendFormat:@"[Before Response]%@\n", temp];
+        [str appendFormat:@"[did Finish]%@\n", temp];
     }
     
     return str;

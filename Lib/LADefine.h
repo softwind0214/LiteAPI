@@ -34,6 +34,23 @@ typedef NS_ENUM(NSInteger, LAResponseStyle) {
     LAResponseStyleCustom           //!< API returns customize data.
 };
 
+typedef NS_ENUM(NSInteger, LAThread) {
+    LAThreadCurrent,
+    LAThreadMain,
+    LAThreadBackground,
+};
+
 typedef NSString * LAIdentifier;    //!< type of identifier of API template
+
+#ifdef DEBUG
+    #define LALog(format, ...) LALog0(format, ##__VA_ARGS__)
+    #define LALog0(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+    #define LALog(format, ...)
+#endif
+
+#define LAPersistantKey     @"$LiteAPIPersistant$"
+
+#define LAntoa(n)   [@(n) stringValue]
 
 #endif /* LADefine_h */

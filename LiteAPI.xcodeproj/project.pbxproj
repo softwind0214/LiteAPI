@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6426642F1D8174D5000D1281 /* LALocal.m in Sources */ = {isa = PBXBuildFile; fileRef = 6426642E1D8174D5000D1281 /* LALocal.m */; };
+		642664321D81751B000D1281 /* LALocalRequestMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 642664311D81751B000D1281 /* LALocalRequestMaker.m */; };
+		642664351D81824C000D1281 /* LALocalRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 642664341D81824C000D1281 /* LALocalRequest.m */; };
 		6426A2941D549962004192FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6426A2931D549962004192FF /* main.m */; };
 		6426A2971D549962004192FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6426A2961D549962004192FF /* AppDelegate.m */; };
 		6426A29A1D549962004192FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6426A2991D549962004192FF /* ViewController.m */; };
-		6426A29D1D549962004192FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6426A29B1D549962004192FF /* Main.storyboard */; };
 		6426A29F1D549962004192FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6426A29E1D549962004192FF /* Assets.xcassets */; };
 		6426A2A21D549962004192FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6426A2A01D549962004192FF /* LaunchScreen.storyboard */; };
+		6482A72D1DE7DE3C002407F6 /* LATable.m in Sources */ = {isa = PBXBuildFile; fileRef = 6482A72C1DE7DE3C002407F6 /* LATable.m */; };
+		6482A7301DE81933002407F6 /* LATableSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6482A72F1DE81933002407F6 /* LATableSelector.m */; };
+		6482A7331DE8194E002407F6 /* LATableTextEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6482A7321DE8194E002407F6 /* LATableTextEditor.m */; };
 		648D96641D705BE300718B20 /* LA.m in Sources */ = {isa = PBXBuildFile; fileRef = 648D96611D705BE300718B20 /* LA.m */; };
 		648D96651D705BE300718B20 /* LACore.m in Sources */ = {isa = PBXBuildFile; fileRef = 648D96631D705BE300718B20 /* LACore.m */; };
 		648D96761D73D56700718B20 /* LACallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 648D96681D73D56700718B20 /* LACallback.m */; };
@@ -22,21 +27,33 @@
 		648D967A1D73D56700718B20 /* LARequestMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 648D96711D73D56700718B20 /* LARequestMaker.m */; };
 		648D967B1D73D56700718B20 /* LAResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 648D96731D73D56700718B20 /* LAResponse.m */; };
 		648D967C1D73D56700718B20 /* LATemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 648D96751D73D56700718B20 /* LATemplate.m */; };
+		649F4F9B1E0D29950091849B /* LARequestMaker+Persistant.m in Sources */ = {isa = PBXBuildFile; fileRef = 649F4F9A1E0D29950091849B /* LARequestMaker+Persistant.m */; };
 		B7288057950271D16DF2757D /* libPods-LiteAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 861BB33C38F3E0C008ABF37C /* libPods-LiteAPI.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		42EA5807AF47764CD2C82062 /* Pods-LiteAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiteAPI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiteAPI/Pods-LiteAPI.debug.xcconfig"; sourceTree = "<group>"; };
+		6426642D1D8174D5000D1281 /* LALocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LALocal.h; sourceTree = "<group>"; };
+		6426642E1D8174D5000D1281 /* LALocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LALocal.m; sourceTree = "<group>"; };
+		642664301D81751B000D1281 /* LALocalRequestMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LALocalRequestMaker.h; sourceTree = "<group>"; };
+		642664311D81751B000D1281 /* LALocalRequestMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LALocalRequestMaker.m; sourceTree = "<group>"; };
+		642664331D81824C000D1281 /* LALocalRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LALocalRequest.h; sourceTree = "<group>"; };
+		642664341D81824C000D1281 /* LALocalRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LALocalRequest.m; sourceTree = "<group>"; };
 		6426A28F1D549962004192FF /* LiteAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiteAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6426A2931D549962004192FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6426A2951D549962004192FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6426A2961D549962004192FF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6426A2981D549962004192FF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6426A2991D549962004192FF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6426A29C1D549962004192FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6426A29E1D549962004192FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6426A2A11D549962004192FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6426A2A31D549962004192FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6482A72B1DE7DE3C002407F6 /* LATable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATable.h; sourceTree = "<group>"; };
+		6482A72C1DE7DE3C002407F6 /* LATable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LATable.m; sourceTree = "<group>"; };
+		6482A72E1DE81933002407F6 /* LATableSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATableSelector.h; sourceTree = "<group>"; };
+		6482A72F1DE81933002407F6 /* LATableSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LATableSelector.m; sourceTree = "<group>"; };
+		6482A7311DE8194E002407F6 /* LATableTextEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATableTextEditor.h; sourceTree = "<group>"; };
+		6482A7321DE8194E002407F6 /* LATableTextEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LATableTextEditor.m; sourceTree = "<group>"; };
 		648D96381D6F018300718B20 /* LADefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LADefine.h; sourceTree = "<group>"; };
 		648D96441D6F018300718B20 /* LiteAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiteAPI.h; sourceTree = "<group>"; };
 		648D96601D705BE300718B20 /* LA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LA.h; sourceTree = "<group>"; };
@@ -57,6 +74,8 @@
 		648D96731D73D56700718B20 /* LAResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAResponse.m; sourceTree = "<group>"; };
 		648D96741D73D56700718B20 /* LATemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LATemplate.h; sourceTree = "<group>"; };
 		648D96751D73D56700718B20 /* LATemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LATemplate.m; sourceTree = "<group>"; };
+		649F4F991E0D29950091849B /* LARequestMaker+Persistant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LARequestMaker+Persistant.h"; sourceTree = "<group>"; };
+		649F4F9A1E0D29950091849B /* LARequestMaker+Persistant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LARequestMaker+Persistant.m"; sourceTree = "<group>"; };
 		861BB33C38F3E0C008ABF37C /* libPods-LiteAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LiteAPI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9DE3FE92956BACB5A638BB /* Pods-LiteAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiteAPI.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiteAPI/Pods-LiteAPI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +92,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6426642C1D8174AD000D1281 /* LocalAPI */ = {
+			isa = PBXGroup;
+			children = (
+				6426642D1D8174D5000D1281 /* LALocal.h */,
+				6426642E1D8174D5000D1281 /* LALocal.m */,
+				642664301D81751B000D1281 /* LALocalRequestMaker.h */,
+				642664311D81751B000D1281 /* LALocalRequestMaker.m */,
+				642664331D81824C000D1281 /* LALocalRequest.h */,
+				642664341D81824C000D1281 /* LALocalRequest.m */,
+			);
+			path = LocalAPI;
+			sourceTree = "<group>";
+		};
 		6426A2861D549962004192FF = {
 			isa = PBXGroup;
 			children = (
@@ -99,7 +131,6 @@
 				6426A2961D549962004192FF /* AppDelegate.m */,
 				6426A2981D549962004192FF /* ViewController.h */,
 				6426A2991D549962004192FF /* ViewController.m */,
-				6426A29B1D549962004192FF /* Main.storyboard */,
 				6426A29E1D549962004192FF /* Assets.xcassets */,
 				6426A2A01D549962004192FF /* LaunchScreen.storyboard */,
 				6426A2A31D549962004192FF /* Info.plist */,
@@ -116,9 +147,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6482A72A1DE7DDD8002407F6 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				6482A72B1DE7DE3C002407F6 /* LATable.h */,
+				6482A72C1DE7DE3C002407F6 /* LATable.m */,
+				6482A72E1DE81933002407F6 /* LATableSelector.h */,
+				6482A72F1DE81933002407F6 /* LATableSelector.m */,
+				6482A7311DE8194E002407F6 /* LATableTextEditor.h */,
+				6482A7321DE8194E002407F6 /* LATableTextEditor.m */,
+				649F4F991E0D29950091849B /* LARequestMaker+Persistant.h */,
+				649F4F9A1E0D29950091849B /* LARequestMaker+Persistant.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		648D96331D6F018300718B20 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				6482A72A1DE7DDD8002407F6 /* UIKit */,
+				6426642C1D8174AD000D1281 /* LocalAPI */,
 				648D96661D73D56700718B20 /* Property */,
 				648D966D1D73D56700718B20 /* Request */,
 				648D965F1D705BE300718B20 /* Core */,
@@ -191,12 +239,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6426A2A61D549962004192FF /* Build configuration list for PBXNativeTarget "LiteAPI" */;
 			buildPhases = (
-				8BC553E839B2CD64ADF80A48 /* Check Pods Manifest.lock */,
+				8BC553E839B2CD64ADF80A48 /* [CP] Check Pods Manifest.lock */,
 				6426A28B1D549962004192FF /* Sources */,
 				6426A28C1D549962004192FF /* Frameworks */,
 				6426A28D1D549962004192FF /* Resources */,
-				D2EB45D46DADF74016E79A75 /* Embed Pods Frameworks */,
-				7647118D3A1B3F4E8F4A94D9 /* Copy Pods Resources */,
+				D2EB45D46DADF74016E79A75 /* [CP] Embed Pods Frameworks */,
+				7647118D3A1B3F4E8F4A94D9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,11 +261,12 @@
 		6426A2871D549962004192FF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Softwind;
 				TargetAttributes = {
 					6426A28E1D549962004192FF = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9RHV5998T7;
 					};
 				};
 			};
@@ -246,21 +295,20 @@
 			files = (
 				6426A2A21D549962004192FF /* LaunchScreen.storyboard in Resources */,
 				6426A29F1D549962004192FF /* Assets.xcassets in Resources */,
-				6426A29D1D549962004192FF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7647118D3A1B3F4E8F4A94D9 /* Copy Pods Resources */ = {
+		7647118D3A1B3F4E8F4A94D9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,29 +316,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiteAPI/Pods-LiteAPI-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8BC553E839B2CD64ADF80A48 /* Check Pods Manifest.lock */ = {
+		8BC553E839B2CD64ADF80A48 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		D2EB45D46DADF74016E79A75 /* Embed Pods Frameworks */ = {
+		D2EB45D46DADF74016E79A75 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,31 +354,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				648D967C1D73D56700718B20 /* LATemplate.m in Sources */,
+				6482A7301DE81933002407F6 /* LATableSelector.m in Sources */,
+				642664351D81824C000D1281 /* LALocalRequest.m in Sources */,
 				648D96641D705BE300718B20 /* LA.m in Sources */,
 				648D96781D73D56700718B20 /* LAProperty.m in Sources */,
+				649F4F9B1E0D29950091849B /* LARequestMaker+Persistant.m in Sources */,
 				6426A29A1D549962004192FF /* ViewController.m in Sources */,
 				6426A2971D549962004192FF /* AppDelegate.m in Sources */,
+				642664321D81751B000D1281 /* LALocalRequestMaker.m in Sources */,
 				648D96651D705BE300718B20 /* LACore.m in Sources */,
 				648D96791D73D56700718B20 /* LARequest.m in Sources */,
+				6482A72D1DE7DE3C002407F6 /* LATable.m in Sources */,
 				6426A2941D549962004192FF /* main.m in Sources */,
 				648D967A1D73D56700718B20 /* LARequestMaker.m in Sources */,
+				6482A7331DE8194E002407F6 /* LATableTextEditor.m in Sources */,
 				648D967B1D73D56700718B20 /* LAResponse.m in Sources */,
 				648D96771D73D56700718B20 /* LADictionary.m in Sources */,
 				648D96761D73D56700718B20 /* LACallback.m in Sources */,
+				6426642F1D8174D5000D1281 /* LALocal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6426A29B1D549962004192FF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6426A29C1D549962004192FF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6426A2A01D549962004192FF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -356,8 +403,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -379,7 +428,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -400,8 +448,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -417,7 +467,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -429,6 +478,7 @@
 			baseConfigurationReference = 42EA5807AF47764CD2C82062 /* Pods-LiteAPI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9RHV5998T7;
 				INFOPLIST_FILE = LiteAPI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = QK.LiteAPI;
@@ -441,6 +491,7 @@
 			baseConfigurationReference = CA9DE3FE92956BACB5A638BB /* Pods-LiteAPI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9RHV5998T7;
 				INFOPLIST_FILE = LiteAPI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = QK.LiteAPI;

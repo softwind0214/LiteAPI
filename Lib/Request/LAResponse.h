@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) NSData *stream;                         //!< use this if your response style is LAResponseStyleStream
 @property (nonatomic, readonly) NSError *error;                         //!< HTTP request error
 @property (nonatomic, readonly) LAResponseStyle style;                  //!< response style
+@property (nonatomic, readonly) NSDictionary *header;                   //!< response header
 
 + (instancetype)response:(NSURLResponse *)response
                    style:(LAResponseStyle)style

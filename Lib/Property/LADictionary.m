@@ -23,9 +23,16 @@
     return self;
 }
 
-- (LAProperty *(^)(NSString *, NSString *))add {
+- (LADictionary *(^)(NSString *, NSString *))add {
     return ^id(NSString *key, NSString *value) {
         self.dic[key] = value;
+        return self;
+    };
+}
+
+- (LADictionary *(^)(NSDictionary *))addDic {
+    return ^id(NSDictionary *value) {
+        [self.dic addEntriesFromDictionary:value];
         return self;
     };
 }

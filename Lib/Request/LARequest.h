@@ -13,6 +13,8 @@
 
 @property (nonatomic, assign) BOOL synchronous;
 @property (nonatomic, assign) LAResponseStyle responseStyle;
+@property (nonatomic, assign) LAPostStyle postStyle;
 @property (nonatomic, strong) NSURLRequest *request;
+@property (nonatomic, strong) NSDictionary *param;                          //!< API parameters set by user
 
 @end

@@ -10,7 +10,8 @@
 
 @interface LATemplate ()
 
-@property (nonatomic, strong) NSArray<NSMutableDictionary<NSString *, id> *> *table;
+@property (nonatomic, strong) NSArray<NSMutableDictionary<LAIdentifier, id> *> *table;
+@property (nonatomic, strong) NSMutableDictionary<LAIdentifier, NSNumber *> *status;
 
 @end
 
@@ -23,7 +24,7 @@
 }
 
 - (id)templateWithIdentifier:(LAIdentifier)identifier {
-    return [self templateWithIdentifier:identifier onStatus:self.status];
+    return [self templateWithIdentifier:identifier onStatus:[self statusForTemplate:identifier]];
 }
 
 - (id)templateWithIdentifier:(LAIdentifier)identifier onStatus:(LAStatus)status {
@@ -31,12 +32,19 @@
 }
 
 - (NSArray *)allIdentifiers {
-    
     __block NSMutableSet *set = [NSMutableSet set];
     [self.table enumerateObjectsUsingBlock:^(NSMutableDictionary<NSString *,id> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [set addObjectsFromArray:obj.allKeys];
     }];
     return set.allObjects;
+}
+
+- (void)setStatus:(LAStatus)status forTemplate:(LAIdentifier)identifier {
+    self.status[identifier] = @(status);
+}
+
+- (LAStatus)statusForTemplate:(LAIdentifier)identifier {
+    return self.status[identifier] ? [self.status[identifier] integerValue] : LAStatusProduction;
 }
 
 #pragma mark - life cycle
@@ -51,16 +59,14 @@
 }
 
 - (instancetype)init {
-    
     if (self = [super init]) {
         self.table = [NSArray arrayWithObjects:
                       [NSMutableDictionary dictionary],
                       [NSMutableDictionary dictionary],
                       [NSMutableDictionary dictionary],
                       nil];
-        self.status = LAStatusBeta;
+        self.status = [NSMutableDictionary dictionary];
     }
-    
     return self;
 }
 

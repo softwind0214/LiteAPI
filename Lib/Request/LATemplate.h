@@ -11,14 +11,18 @@
 
 @interface LATemplate : NSObject
 
-@property (nonatomic, assign) LAStatus status;          //!< current API status
++ (instancetype)shared;
+
+#pragma mark - template S/L
 
 - (void)registerTemplate:(id)template withIdentifier:(LAIdentifier)identifier onStatus:(LAStatus)status;
 - (id)templateWithIdentifier:(LAIdentifier)identifier;
 - (id)templateWithIdentifier:(LAIdentifier)identifier onStatus:(LAStatus)status;
 
-- (NSArray *)allIdentifiers;
+#pragma mark - template traverse
 
-+ (instancetype)shared;
+- (NSArray *)allIdentifiers;
+- (void)setStatus:(LAStatus)status forTemplate:(LAIdentifier)identifier;
+- (LAStatus)statusForTemplate:(LAIdentifier)identifier;
 
 @end

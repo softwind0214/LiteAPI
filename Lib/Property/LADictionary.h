@@ -10,6 +10,7 @@
 
 @interface LADictionary : LAProperty
 
-- (LAProperty *(^)(NSString *k, NSString *v))add;           //!< Add a pair of key and value to dictionary.
+- (LADictionary *(^)(NSString *k, NSString *v))add;             //!< Add a pair of key and value to dictionary.
+- (LADictionary *(^)(NSDictionary *value))addDic;               //!< Add an dictionary
 
 @end

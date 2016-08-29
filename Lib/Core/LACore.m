@@ -50,22 +50,28 @@
     LACore *core = [self shared];
     switch (style) {
         case LAPostStyleForm:
+        {
             request = [core.normalRequestSerializer requestWithMethod:method
                                                             URLString:url
                                                            parameters:params
                                                                 error:nil];
             break;
-
+        }
         case LAPostStyleJSON:
+        {
             request = [core.JSONRequestSerializer requestWithMethod:method
                                                           URLString:url
                                                          parameters:params
                                                               error:nil];
             break;
-            
+        }
         case LAPostStyleCustom:
         default:
+        {
+            request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+            request.HTTPMethod = method;
             break;
+        }
     }
 
     return request;

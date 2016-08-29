@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSData *stream;
 @property (nonatomic, strong) NSError *error;
 @property (nonatomic, assign) LAResponseStyle style;
+@property (nonatomic, strong) NSDictionary *header;
 
 @property (nonatomic, strong) NSString *url;
 
@@ -29,7 +30,8 @@
     resp.style =  style;
     resp.statusCode = http.statusCode;
     resp.error = error;
-    resp.url = response.URL.absoluteString;
+    resp.url = http.URL.absoluteString;
+    resp.header = http.allHeaderFields;
     
     switch (resp.style) {
         case LAResponseStyleJSON:
@@ -54,8 +56,9 @@
     [str appendFormat:@"[STATUS]: %ld\n", self.statusCode];
     [str appendFormat:@"[STYLE]: %ld\n", self.style];
     [str appendFormat:@"[ERROR]: %@\n", self.error];
+    [str appendFormat:@"[HEAD]: %@\n", self.header];
     [str appendFormat:@"[DATA]: %@\n", self.JSON ? : self.stream];
-    [str appendString:@"---------------------------Response End---------------------------"];
+    [str appendString:@"---------------------------Response End---------------------------\n"];
     return str;
 }
 
