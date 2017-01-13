@@ -26,7 +26,7 @@ We have covered most situations of http/https request between iOS client and you
 
 - (void)createYourAPITemplate {
 	[LA createTemplate:^(LARequestMaker *maker) {    
-		maker.host(@"http://api.kagou.me").version(@"v1").method(LAMethodGET);
+		maker.host(@"http://your-host").version(@"v1").method(LAMethodGET);
 		maker.post(LAPostStyleForm).sync(NO).response(LAResponseStyleJSON);
 		maker.willStart.delegate(self, @selector(sign:));
 	}
@@ -48,7 +48,7 @@ We have covered most situations of http/https request between iOS client and you
 - (void)invokeYourAPI {
 	[LA invokeRequest:^(LARequestMaker *maker) {
 		maker.import(@"template").path(@"/ping");
-		maker.didFinish.block(^id(LAResponse *response){
+		maker.didFinish.thread(LAThreadBackground).block(^id(LAResponse *response){
 			NSLog(@"%@", response.JSON);
 			return nil;
 		});
@@ -64,7 +64,7 @@ or you may not want to use block:
 - (void)invokeYourAPI {
 	[LA invokeRequest:^(LARequestMaker *maker) {
 		maker.import(@"template").path(@"/ping");
-		maker.didFinish.delegate(self, @selector(didFinish:));
+		maker.didFinish.thread(LAThreadBackground).delegate(self, @selector(didFinish:));
 	}];
 }
 
@@ -82,7 +82,7 @@ or you may not want to use block:
 
 - (void)example {
 	[LA createTemplate:^(LARequestMaker *maker) {    
-		maker.import(@"template").host(@"http://api.test.kagou.me");
+		maker.import(@"template").host(@"http://your-beta-host");
 	}
         withIdentifier:@"template"
               onStatus:LAStatusBeta];
