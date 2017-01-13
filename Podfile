@@ -4,6 +4,6 @@
 # use_frameworks!
 
 target 'LiteAPI' do
-	pod 'AFNetworking'
+	pod 'AFNetworking', '~> 3.0'
 end
 
