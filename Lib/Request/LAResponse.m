@@ -53,8 +53,8 @@
 - (NSString *)description {
     NSMutableString *str = [NSMutableString stringWithString:@"\n---------------------------API Response---------------------------\n"];
     [str appendFormat:@"[REQUEST]: %@\n", self.url];
-    [str appendFormat:@"[STATUS]: %ld\n", self.statusCode];
-    [str appendFormat:@"[STYLE]: %ld\n", self.style];
+    [str appendFormat:@"[STATUS]: %@\n", LAntoa(self.statusCode)];
+    [str appendFormat:@"[STYLE]: %@\n", LAntoa(self.style)];
     [str appendFormat:@"[ERROR]: %@\n", self.error];
     [str appendFormat:@"[HEAD]: %@\n", self.header];
     [str appendFormat:@"[DATA]: %@\n", self.JSON ? : self.stream];

@@ -74,9 +74,9 @@
     __block NSMutableString *str = [NSMutableString stringWithString:@"\n"];
     [self.table enumerateObjectsUsingBlock:^(NSMutableDictionary<NSString *,id> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         for (NSString *key in obj.keyEnumerator) {
-            [str appendFormat:@"-------------------------API TEMPLATE[%@][%ld]-------------------------\n", key, idx];
+            [str appendFormat:@"-------------------------API TEMPLATE[%@][%@]-------------------------\n", key, LAntoa(idx)];
             [str appendString:[obj[key] description]];
-            [str appendFormat:@"-------------------------TEMPLATE END[%@][%ld]-------------------------\n", key, idx];
+            [str appendFormat:@"-------------------------TEMPLATE END[%@][%@]-------------------------\n", key, LAntoa(idx)];
         }
     }];
     

@@ -107,7 +107,7 @@
         case 5:
         {
             cell.textLabel.text = @"Sync";
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld", [[maker valueForKey:@"v_sync"] integerValue]];
+            cell.detailTextLabel.text = [[maker valueForKey:@"v_sync"] stringValue];
             break;
         }
         case 6:
