@@ -1,3 +1,25 @@
+### Introduction
+
+A lite api framework that implemented basic RPC reqirements.
+We use chaining coding style to provide convenience of calling methods.
+We have covered most situations of http/https request between iOS client and your backend.
+
+#### features
+
+* Store a template, import it and modify very few of params before you call an http request.
+* Most of an http request's params can be modified at one method. It's convenient and short.
+* Two life cycle callbacks for every request, `willStart` and `didFinish`.
+* Make your callbacks dispatching to current/main/background thread by setting a flag.
+* Hot-time API environment exchanging.
+
+#### todo
+
+* File transformation support.
+* JSON/XML/... to model support.
+* More...
+
+### Usage
+
 #### create your API template
 
 ```
