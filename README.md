@@ -21,7 +21,7 @@ We have covered most situations of http/https request between iOS client and you
 ### Podfile
 
 ```ruby
-pod "MPMessagePack"
+pod "LiteAPI"
 ```
 
 ### Usage
