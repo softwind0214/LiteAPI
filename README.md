@@ -18,6 +18,12 @@ We have covered most situations of http/https request between iOS client and you
 * JSON/XML/... to model support.
 * More...
 
+### Podfile
+
+```ruby
+pod "MPMessagePack"
+```
+
 ### Usage
 
 #### create your API template
